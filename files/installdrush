@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cd /tmp
+
+# download
+wget http://ftp.drupal.org/files/projects/drush-All-versions-3.0-beta1.tar.gz
+
+# extract
+tar xzf drush-All-versions-3.0-beta1.tar.gz
+
+# remove old source, and move new source in
+rm -rf /usr/local/drush
+mv drush /usr/local/
+
+# remov old link, make new link
+rm -f /usr/local/bin/drush
+ln -s /usr/local/drush/drush /usr/local/bin/drush

@@ -1,0 +1,20 @@
+<?php
+
+$conf['cache_inc'] = './sites/all/modules/cacherouter/cacherouter.inc';
+$conf['cacherouter'] = array(
+	'default' => array(
+		'engine' => '<%= engine %>',
+		'servers' => array(
+			<% servers.each do |server| -%>
+			'<%= server %>',
+			<% end -%>
+		),
+		'shared' => <%= shared %>,
+		'prefix' => '<%= prefix %>',
+		'path' => '<%= path %>',
+		'static' => <%= static %>,
+		'fast_cache' => <%= fast_cache %>,
+	),
+);
+
+?>
